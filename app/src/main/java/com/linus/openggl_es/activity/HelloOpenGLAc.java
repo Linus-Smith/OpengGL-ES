@@ -4,7 +4,7 @@ import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.telecom.Log;
+import android.util.Log;
 
 import com.linus.openggl_es.R;
 

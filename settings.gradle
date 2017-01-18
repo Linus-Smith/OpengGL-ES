@@ -1,1 +1,1 @@
-include ':app', ':nativeactivity'
+include ':app', ':nativeactivity', ':chapter_2'

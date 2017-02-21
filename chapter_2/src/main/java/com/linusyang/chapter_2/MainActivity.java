@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLContext;
+
 public class MainActivity extends AppCompatActivity {
 
     private final int CONTEXT_CLIENT_VERSION = 3;
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
             finish();
 
         }
+
+
 
         setContentView ( mGLSurfaceView );
     }

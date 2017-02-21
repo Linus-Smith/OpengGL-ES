@@ -9,7 +9,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
+import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.opengles.GL10;
 
 /**
@@ -160,7 +162,7 @@ public class HelloTriangleRenderer implements GLSurfaceView.Renderer {
         GLES30.glDrawArrays ( GLES30.GL_TRIANGLES, 0, 3 );
     }
 
-    // /
+    //
     // Handle surface changes
     //
     public void onSurfaceChanged ( GL10 glUnused, int width, int height )

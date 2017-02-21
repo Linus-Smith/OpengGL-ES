@@ -9,6 +9,10 @@ import android.os.Bundle;
 
 import com.chyang.chapter_6.R;
 
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -49,8 +53,19 @@ public class Example6_3 extends AppCompatActivity {
 
     private class Example6_3Renderer  implements GLSurfaceView.Renderer {
 
+        private FloatBuffer mVertices;
+
+        private final float[] mVerticesData =
+                {
+                        0.0f, 0.5f, 0.0f,
+                        -0.5f,-0.5f, 0.0f,
+                        0.5f, -0.5f, 0.0f
+                };
+
         public Example6_3Renderer(Context context) {
-            
+              mVertices = ByteBuffer.allocateDirect( mVerticesData.length * 4 )
+                      .order(ByteOrder.nativeOrder()).asFloatBuffer();
+            mVertices.put((mVerticesData)).position(0);
         }
 
         @Override

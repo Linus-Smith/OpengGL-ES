@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.Example6_3" />
-        <activity android:name=".activity.Example6_6"></activity>
+        <activity android:name=".activity.Example6_6" />
+        <activity android:name=".activity.VAOActivity"></activity>
     </application>
 
 </manifest>

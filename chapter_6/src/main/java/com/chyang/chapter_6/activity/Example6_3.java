@@ -134,8 +134,10 @@ public class Example6_3 extends AppCompatActivity {
                 return;
             }
 
+
             GLES30.glAttachShader(shaderProgram, vShader);
             GLES30.glAttachShader(shaderProgram, fShader);
+
 
             GLES30.glLinkProgram(shaderProgram);
 
@@ -148,6 +150,8 @@ public class Example6_3 extends AppCompatActivity {
                 Log.e("linus", GLES30.glGetProgramInfoLog(shaderProgram));
             }
 
+            int  a = GLES30.glGetAttribLocation(shaderProgram, "a_position");
+            System.out.println(a+"=====-");
             mProgramValue = shaderProgram;
 
             GLES30.glClearColor(1.0f, 1.0f, 1.0f, 0.0f);

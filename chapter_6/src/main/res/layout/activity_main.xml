@@ -4,6 +4,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.chyang.chapter_6.MainActivity">
+
     <Button
         android:id="@+id/bt_e6_3"
         android:layout_width="match_parent"
@@ -14,4 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="e6_6"/>
+    <Button
+        android:id="@+id/bt_6_3_dome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6_3_dome"/>
 </LinearLayout>

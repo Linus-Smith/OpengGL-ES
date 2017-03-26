@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.chyang.chapter_6">
 
     <application
@@ -17,7 +16,8 @@
         </activity>
         <activity android:name=".activity.Example6_3" />
         <activity android:name=".activity.Example6_6" />
-        <activity android:name=".activity.VAOActivity"></activity>
+        <activity android:name=".activity.VAOActivity" />
+        <activity android:name=".activity.Example6_3_1_dome"></activity>
     </application>
 
 </manifest>

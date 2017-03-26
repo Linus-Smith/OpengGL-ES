@@ -186,7 +186,6 @@ public class VAOActivity extends AppCompatActivity {
             mHeight = height;
         }
 
-        // Handle to a program object
         private int mProgramObject;
 
         // Additional member variables

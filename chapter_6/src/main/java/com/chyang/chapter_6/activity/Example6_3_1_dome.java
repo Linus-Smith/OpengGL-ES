@@ -13,6 +13,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
+import java.util.Random;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -49,11 +50,9 @@ public class Example6_3_1_dome extends AppCompatActivity {
         private int mWidth;
         private int mheight;
         private float[] verticesData = new float[] {
-                0.0f, 0.05f, -1.0f,
-                -0.5f,-0.5f, -1.0f,
-                0.5f, -0.5f, 1.0f,
-                0.4f, -1.0f,  1.0f,
-                1.0f, 1.0f ,  1.0f,
+                0.0f, 1.0f, -1.0f,
+                0.1f,  -1.0f, -1.0f,
+                -1.0f, -1.0f,  0.0f,
         };
 
         public MyRender(Context context) {
@@ -87,25 +86,28 @@ public class Example6_3_1_dome extends AppCompatActivity {
 
         @Override
         public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+
             String vShaderStr =
-                    "#version 300 es              \n" +
-                            "layout(location = 0) in vec4 a_color;     \n" +
-                            "layout(location = 1) in vec4 a_position;  \n" +
-                            "out vec4 v_color;                         \n" +
-                            "void main()                               \n" +
-                            "{                                         \n" +
-                            "        v_color = a_color;                 \n" +
-                            "        gl_Position = a_position;          \n" +
-                            "}";
+                    "#version 300 es 			  \n"
+                            +" in vec4 aColor;            \n"
+                            + "in vec4 vPosition;           \n"
+                            + "out vec4 vColor;             \n"
+                            + "void main()                  \n"
+                            + "{                            \n"
+                            + "    vColor = aColor;         \n"
+                            + "   gl_Position = vPosition;  \n"
+                            + "   gl_PointSize = 30.0;       \n"
+                            + "}                            \n";
+
             String fShaderStr =
-                    "#version 300 es                                 \n" +
-                            "precision mediump float;                \n" +
-                            "in vec4 v_color;                        \n" +
-                            "out vec4 ao_fragColor;                   \n" +
-                            "void main()                             \n" +
-                            "{                                       \n" +
-                            "       ao_fragColor = v_color;           \n" +
-                            "}";
+                    "#version 300 es		 			          	\n"
+                            + "precision mediump float;					  	\n"
+                            + "in vec4 vColor;                              \n "
+                            + "out vec4 fragColor;	 			 		  	\n"
+                            + "void main()                                  \n"
+                            + "{                                            \n"
+                            + "  fragColor = vColor;                    	\n"
+                            + "}                                            \n";
 
             int vShader = loaderShader(vShaderStr, GLES30.GL_VERTEX_SHADER);
             int fShader = loaderShader(fShaderStr, GLES30.GL_FRAGMENT_SHADER);
@@ -142,7 +144,7 @@ public class Example6_3_1_dome extends AppCompatActivity {
             //查询支持的最大顶点数
             int[] params = new int[1];
             GLES30.glGetIntegerv(GLES30.GL_MAX_VERTEX_ATTRIBS, params, 0);
-            System.out.println(params[0] +"======");
+
         }
 
         @Override
@@ -154,17 +156,16 @@ public class Example6_3_1_dome extends AppCompatActivity {
         @Override
         public void onDrawFrame(GL10 gl) {
             GLES30.glViewport(0, 0, mWidth, mheight);
+            GLES30.glDepthRangef(1.0f, 1.0f );
             GLES30.glClear(GLES30.GL_COLOR_BUFFER_BIT);
             GLES30.glUseProgram(mProgramValue);
-
-            GLES30.glVertexAttrib4f(0, 1.0f, 0.5f, 0.0f, 1.0f);
-            floatBuffer.position(0);
+            GLES30.glVertexAttrib4f(0, new Random().nextFloat(), 0.4f, 0.5f, 0.5f);
             GLES30.glVertexAttribPointer(1, 3, GLES30.GL_FLOAT, false, 0, floatBuffer);
             GLES30.glEnableVertexAttribArray(1);
-            GLES30.glLineWidth(100);
-            GLES30.glDrawArrays(GLES30.GL_TRIANGLE_STRIP, 3, 5);
+            GLES30.glDrawArrays(GLES30.GL_TRIANGLES, 0, 3);
             GLES30.glDisableVertexAttribArray(1);
-
+            int e = GLES30.glGetError();
+            System.out.println((e == GLES30.GL_NO_ERROR)+"=====");
         }
     }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.chyang.MainActivity">
+
+    <Button
+        android:id="@+id/bt_2_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E2_1"/>
+
+    <Button
+        android:id="@+id/bt_e6_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="e6_3"/>
+    <Button
+        android:id="@+id/bt_e6_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="e6_6"/>
+    <Button
+        android:id="@+id/bt_6_3_dome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="e6_3_dome"/>
+    <Button
+        android:id="@+id/bt_8_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="e8_1"/>
+</LinearLayout>

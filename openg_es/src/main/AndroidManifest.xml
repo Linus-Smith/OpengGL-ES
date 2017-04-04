@@ -8,19 +8,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.chyang.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.chyang.activity.Example6_3" />
-        <activity android:name="com.chyang.activity.Example6_6" />
-        <activity android:name="com.chyang.activity.VAOActivity" />
-        <activity android:name="com.chyang.activity.Example6_3_1_dome" />
-        <activity android:name="com.chyang.activity.Example_8_1" />
-        <activity android:name="com.chyang.activity.Example2_1"></activity>
+        <activity android:name=".activity.Example6_3" />
+        <activity android:name=".activity.Example6_6" />
+        <activity android:name=".activity.VAOActivity" />
+        <activity android:name=".activity.Example6_3_1_dome" />
+        <activity android:name=".activity.Example_8_1" />
+        <activity android:name=".activity.Example2_1" />
+        <activity android:name=".activity.Example9_1" />
+        <activity android:name=".activity.Example9_2"></activity>
     </application>
 
 </manifest>

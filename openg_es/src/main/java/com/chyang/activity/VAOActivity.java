@@ -108,7 +108,7 @@ public class VAOActivity extends AppCompatActivity {
                             "}";
 
             // Load the shaders and get a linked program object
-            mProgramObject =loadProgram(vShaderStr, fShaderStr);
+            mProgramObject = loadProgram(vShaderStr, fShaderStr);
 
             // Generate VBO Ids and load the VBOs with data
             GLES30.glGenBuffers(2, mVBOIds, 0);

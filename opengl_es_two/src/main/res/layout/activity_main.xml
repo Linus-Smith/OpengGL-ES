@@ -10,5 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="sample3_1"/>
+    <Button
+        android:id="@+id/bt5_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sample5_1"/>
+
+    <Button
+        android:id="@+id/bt_5_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sample5_2"/>
+    <Button
+        android:id="@+id/bt_5_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sample5_3"/>
+    <Button
+        android:id="@+id/bt_5_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sample5_4"/>
 
 </LinearLayout>

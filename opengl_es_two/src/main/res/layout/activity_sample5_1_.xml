@@ -8,6 +8,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.linus.opengl_es_two.Sample5.Activity.Sample5_1_Activity">
+    tools:context="com.linus.opengl_es_two.Sample5.c_5_1.Sample5_1_Activity">
 
 </RelativeLayout>

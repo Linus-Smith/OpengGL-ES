@@ -16,7 +16,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Sample3.Activity.Sample3_1Activity" />
-        <activity android:name=".Sample5.Activity.Sample5_1_Activity"></activity>
+        <activity android:name=".Sample5.c_5_1.Sample5_1_Activity"></activity>
+        <activity android:name=".Sample5.c_5_2.Sample5_2_Activity"></activity>
+        <activity android:name=".Sample5.c_5_3.Sample5_3_Activity"></activity>
+        <activity android:name=".Sample5.c_5_4.Sample5_4_Activity"></activity>
     </application>
 
 </manifest>

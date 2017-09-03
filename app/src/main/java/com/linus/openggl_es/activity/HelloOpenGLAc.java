@@ -24,7 +24,7 @@ public class HelloOpenGLAc extends AppCompatActivity implements GLSurfaceView.Re
     }
 
 
-    //这个方法中主要用来设置一些绘制时不常变化的参数，　比如背景色，是否打开z-buffer等
+    //这个方法中主要用来设置一些绘制时不常变化的参数，　比如背景色，是否打开z-buffer等TGGGGGGGGGGGGGGGGGGGGGGGGGGGG
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         Log.d("Linus.smith", "onSurfaceCreate");

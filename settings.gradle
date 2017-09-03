@@ -1,1 +1,1 @@
-include ':app', ':nativeactivity', ':openg_es_one', ':lookopenglapidome', ':opengl_es_two'
+include ':app', ':nativeactivity', ':openg_es_one', ':lookopenglapidome', ':opengl_es_two', ':opengl_es_three'

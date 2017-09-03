@@ -1,4 +1,4 @@
-package com.example.opengl_es_three;
+package com.example.opengesnative;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.opengl_es_three", appContext.getPackageName());
+        assertEquals("com.example.opengesnative", appContext.getPackageName());
     }
 }

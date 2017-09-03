@@ -1,4 +1,4 @@
-package com.example.opengl_es_three;
+package com.example.opengesnative;
 
 import org.junit.Test;
 

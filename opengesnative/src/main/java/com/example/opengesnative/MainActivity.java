@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onSurfaceChanged(GL10 gl10, int i, int i1) {
-            MainActivity.this.onSurfaceChanged();
+            MainActivity.this.onSurfaceChanged(i, i1);
         }
 
         @Override
@@ -47,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private native void onSurfaceCreated();
-    private native void onSurfaceChanged();
+    private native void onSurfaceChanged(int width, int height);
     private native void onDrawFrame();
 
 
-    public native String stringFromJNI();
 }

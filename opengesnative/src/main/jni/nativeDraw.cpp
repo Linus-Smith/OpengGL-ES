@@ -2,18 +2,19 @@
 #include <string>
 #include <android/log.h>
 
+
 static const char * kClassName = "com/example/opengesnative/MainActivity";
 
 #define  LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "linus" , __VA_ARGS__);
 
 
 void onSurfaceCreated();
-void onSurfaceChanged();
+void onSurfaceChanged(JNIEnv env, jobject obj, int width, int height);
 void onDrawFrame();
 
 static const JNINativeMethod gMethod[] = {
         {"onSurfaceCreated", "()V", (void *)onSurfaceCreated},
-        {"onSurfaceChanged",  "()V", (void *)onSurfaceChanged},
+        {"onSurfaceChanged",  "(II)V", (void *)onSurfaceChanged},
         {"onDrawFrame", "()V", (void *)onDrawFrame}
 };
 
@@ -22,12 +23,12 @@ void onSurfaceCreated() {
 }
 
 
-void onSurfaceChanged() {
-    LOGD("onSurfaceChanged");
+void onSurfaceChanged(JNIEnv env, jobject obj, int width, int height) {
+    LOGD("onSurfaceChanged %d  %d", width, height);
 }
 
 void onDrawFrame() {
-    LOGD("onDrawFrddame");
+   // LOGD("onDrawFrddame");
 }
 
 JNIEXPORT jint JNI_OnLoad(JavaVM * vm, void * reserved) {
@@ -48,10 +49,7 @@ JNIEXPORT jint JNI_OnLoad(JavaVM * vm, void * reserved) {
         LOGD("register natives error");
         return -1;
     }
-
     return JNI_VERSION_1_4;
-
-
 }
 
 

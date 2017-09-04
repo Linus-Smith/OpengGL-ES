@@ -38,7 +38,7 @@ static const JNINativeMethod gMethod[] = {
 static const char * vShader = {
         "#version 300 es                  \n"
                 "uniform mat4 uMVPMatrix;"
-                "layout (location = 0) in vec3 aPosition;    \n"
+                "layout (location = 0) in vec3  aPosition;    \n"
                 "layout (location = 1) in vec4 aColor;       \n"
                 "out vec4 vColor;"
                 "void main() {                              \n"
@@ -58,6 +58,35 @@ static const char * fShader = {
                 " }"
 };
 
+struct ShdaderIndex {
+    GLint mvpMatrix;
+    GLint position;
+    GLint color;
+} shIndex;
+
+struct VertexData {
+    GLfloat  x;
+    GLfloat  y;
+    GLfloat  z;
+};
+
+struct ShaderData {
+    VertexData vertexData;
+};
+
+
+struct ShaderData shaderData[] = {
+        {-0.5f, 0.5f, 0.0f},
+        {0.5f, 0.5f, 0.0f},
+        {-0.5f, -0.5f, 0.0f},
+        {0.5f, -0.5f, 0.0f}
+};
+
+GLuint * bufferId;
+static const int BUFFER_COUNT = 1;
+
+GLuint * vaoId;
+static const int VAO_COUNT = 1;
 
 
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {

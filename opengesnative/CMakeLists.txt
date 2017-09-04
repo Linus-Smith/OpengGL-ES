@@ -31,7 +31,11 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             src/main/jni/nativeDraw.cpp )
+             src/main/jni/nativeDraw.cpp
+              src/main/jni/common/esUtil.c
+              src/main/jni/common/esTransform.c
+              src/main/jni/common/esShapes.c
+              src/main/jni/common/esShader.c)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by

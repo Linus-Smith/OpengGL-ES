@@ -42,7 +42,7 @@ static const char * vShader = {
                 "layout (location = 1) in vec4 aColor;       \n"
                 "out vec4 vColor;"
                 "void main() {                              \n"
-                "   gl_Position = uMVPMatrix * vec4(aPosition, 1); \n"
+                "   gl_Position =  uMVPMatrix * vec4(aPosition, 1); \n"
                 "   vColor = aColor;                                \n"
                 "}    \n"
 };
@@ -82,12 +82,15 @@ struct ShaderData shaderData[] = {
         {0.5f, -0.5f, 0.0f}
 };
 
+ESMatrix * mModeMatrix;
+ESMatrix * mPMatrox;
+
+
 GLuint * bufferId;
 static const int BUFFER_COUNT = 1;
 
 GLuint * vaoId;
 static const int VAO_COUNT = 1;
-
 
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
     JNIEnv *env = NULL;

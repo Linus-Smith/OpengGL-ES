@@ -335,6 +335,7 @@ esMatrixLookAt ( ESMatrix *result,
                  float lookAtX, float lookAtY, float lookAtZ,
                  float upX,     float upY,     float upZ );
 
+
 #ifdef __cplusplus
 }
 #endif
